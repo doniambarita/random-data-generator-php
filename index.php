@@ -17,28 +17,30 @@ $faker = Faker\Factory::create('id_ID');
   <body>
       <div class="container">
         <h1 class="mt-3">Generate Data</h1>
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">No</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Tanggal Lahir</th>
-                <th scope="col">Alamat</th>
-                <th scope="col">Nomor HP</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php for($i=1;$i<=10;$i++): ?>
-              <tr>
-                <th scope="row"><?= $i; ?></th>
-                <td><?= $faker->name(); ?></td>
-                <td><?= $faker->time('d F Y') ?></td>
-                <td><?= $faker->address(); ?></td>
-                <td><?= $faker->phoneNumber(); ?></td>
-              </tr>
-              <?php endfor; ?>
-            </tbody>
-          </table>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">No</th>
+                  <th scope="col">Nama</th>
+                  <th scope="col">Tanggal Lahir</th>
+                  <th scope="col">Alamat</th>
+                  <th scope="col">Nomor HP</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php for($i=1;$i<=10;$i++): ?>
+                <tr>
+                  <th scope="row"><?= $i; ?></th>
+                  <td><?= $faker->name(); ?></td>
+                  <td><?= date($format = 'd F Y', $max = $faker->unixTime(633740400)); ?></td>
+                  <td><?= $faker->address(); ?></td>
+                  <td><?= $faker->phoneNumber(); ?></td>
+                </tr>
+                <?php endfor; ?>
+              </tbody>
+            </table>
+          </div>
         <br>
         <div class="alert alert-dark" role="alert">
           Klik <a href="http://localhost:3000/index.php" class="alert-link">Di Sini</a> Untuk Memuat Data Baru.
