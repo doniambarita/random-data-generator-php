@@ -22,6 +22,7 @@ $faker = Faker\Factory::create('id_ID');
               <thead>
                 <tr>
                   <th scope="col">No</th>
+                  <th scope="col">NIK</th>
                   <th scope="col">Nama</th>
                   <th scope="col">Tanggal Lahir</th>
                   <th scope="col">Alamat</th>
@@ -32,6 +33,7 @@ $faker = Faker\Factory::create('id_ID');
                 <?php for($i=1;$i<=10;$i++): ?>
                 <tr>
                   <th scope="row"><?= $i; ?></th>
+                  <td><?= $faker->nik(); ?></td>
                   <td><?= $faker->name(); ?></td>
                   <td><?= date($format = 'd F Y', $max = $faker->unixTime(633740400)); ?></td>
                   <td><?= $faker->address(); ?></td>
@@ -43,7 +45,7 @@ $faker = Faker\Factory::create('id_ID');
           </div>
         <br>
         <div class="alert alert-dark" role="alert">
-          Klik <a href="http://localhost:3000/index.php" class="alert-link">Di Sini</a> Untuk Memuat Data Baru.
+          Klik <a href="http://localhost/random-data-generator-php/" class="alert-link">Di Sini</a> Untuk Memuat Data Baru.
         </div>
       </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
